@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Lox {
-    static boolean hadError = false;
+    private static boolean hadError = false;
 
     /**
      * Read lox code, either through a source file or through a REPL.
@@ -82,10 +82,23 @@ public class Lox {
         }
     }
 
-    static void error(int line, String message) {
+    /**
+     * Display that an error has occurred to the user.
+     * 
+     * @param line    line of source code where the error originates
+     * @param message some helpful message for the user
+     */
+    public static void error(int line, String message) {
         report(line, "", message);
     }
 
+    /**
+     * Record an error has occurred, and inform the user.
+     * 
+     * @param line    line of source code where the error originates
+     * @param where   part of the line where the error originates
+     * @param message some helpful message for the user
+     */
     private static void report(int line, String where, String message) {
         System.err.println("[line " + line + "] Error" + where + ": " + message);
         hadError = true;
