@@ -1,4 +1,4 @@
-package com.lox;
+package jlox.src.com.lox;
 
 import java.io.BufferedReader;
 import java.io.IOException;
